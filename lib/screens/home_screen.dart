@@ -119,6 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       return Padding(
                         padding: const EdgeInsets.only(right: 12),
                         child: MovieCard(
+                          key: ValueKey(movies[index].imageUrl),
                           movie: movies[index],
                           imageHeight: 180,
                           imageWidth: 120,
@@ -148,6 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     itemBuilder: (context, index) {
                       return MovieCard(
+                        key: ValueKey(movies[index].imageUrl),
                         movie: movies[index],
                         imageHeight: 180,
                         imageWidth: double.infinity,

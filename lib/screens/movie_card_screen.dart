@@ -16,9 +16,8 @@ class MovieCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isNetworkImage = movie.imageUrl.startsWith('http');
-
     return GestureDetector(
+
       onTap: () {
         Navigator.push(
           context,
@@ -32,16 +31,8 @@ class MovieCard extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
-              child: isNetworkImage
-                  ? Image.network(
-                movie.imageUrl,
-                height: imageHeight,
-                width: imageWidth,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) => _placeholder(),
-              )
-                  : Image.asset(
-                movie.imageUrl,
+              child: Image.network(
+                'http://10.0.2.2:8000/${movie.imageUrl}', // Tự nối full path ảnh
                 height: imageHeight,
                 width: imageWidth,
                 fit: BoxFit.cover,
@@ -60,6 +51,8 @@ class MovieCard extends StatelessWidget {
           ],
         ),
       ),
+
+
     );
   }
 

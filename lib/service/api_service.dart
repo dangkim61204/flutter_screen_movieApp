@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import '../models/movie.dart';
 
 class ApiService {
-  static const String baseUrl = 'http://192.168.1.4:8000/api/movies'; // Android
+  static const String baseUrl = 'http://10.0.2.2:8000/api/movies'; // Android
 
   static Future<List<Movie>> fetchMovies() async {
     final response = await http.get(Uri.parse(baseUrl));
