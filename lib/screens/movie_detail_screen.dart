@@ -23,8 +23,8 @@ class MovieDetailScreen extends StatelessWidget {
                 // Poster
                 Column(
                   children: [
-                    Image.asset(
-                      movie.imageUrl ?? 'assets/images/lieu_chu_ky.jpg',
+                    Image.network(
+                      'http://10.0.2.2:8000/${movie.imageUrl}',
                       height: 200,
                       width: 150,
                       fit: BoxFit.cover,
